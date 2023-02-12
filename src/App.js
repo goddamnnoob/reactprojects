@@ -2,24 +2,31 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  function displayTime() {
+    try {
+      var region = document.getElementById("region").value;
+    console.log(region);
+    var date = new Date();
+    var currentTime = date.toLocaleString("en-US", {
+      timeZone: region
+    });
+    console.log(region);
+    document.getElementById("time").innerHTML = currentTime;
+    } catch (error) {
+      document.getElementById("time").innerHTML = error;
+    }
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1>Current Time</h1>
+    <p >Enter region: </p>
+    <input type="text" id="region" name="region"/>
+    <button onClick={displayTime}>Submit</button>
+    <p id="time"></p>
     </div>
   );
 }
+
+
 
 export default App;
