@@ -24,6 +24,11 @@
   color: white;
 }
 
+.MyButton {
+  background-color: #61dafb;
+  align-items :center;
+}
+
 .App-link {
   color: #61dafb;
 }
